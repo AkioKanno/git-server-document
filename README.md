@@ -1,12 +1,12 @@
 **Gitサーバ構築メモ**  
   
-# H2 1.git のインストール  
+#  1.git のインストール  
      yum install git  
   
-# H2 2. git daemon のインストール  
+#  2. git daemon のインストール  
      yum install git-daemon  
   
-# H2 3. リポジトリの作成  
+#  3. リポジトリの作成  
     su git  
     cd /var/lib/git  
     mkdir (リポジトリ名)  
@@ -15,20 +15,20 @@
 
 ※point : リポジトリ作成は git ユーザとか作成して行うとよい感じです  
   
-# H2 4. git-daemonの起動  
+#  4. git-daemonの起動  
     /usr/bin/git-daemon --base-path=/var/lib/git/ --export-all --enable=receive-pack  --reuseaddr --verbose /var/lib/git  
 ※point : push などのを制限するのであれば"--enable=receive-pack"のオプションは外してください  
   
 上記のコマンドを叩くと帰ってこないので、閉じないで別窓などを立ち上げてください  
   
-# H2 5. cloneしてみる  
+#  5. cloneしてみる  
     cd (適当な開発ディレクトリへ移動)  
     git clone git://localhost/リポジトリ名  
 実行後、git-daemon の画面にログが流れます  
 私は リポジトリのパーミッションにより、失敗しておりました....  
   
 
-# H2 6. pushしてみる  
+#  6. pushしてみる  
 ここまでくればあと一歩！ ゴールは目前です。  
     echo "test !" > test.txt  
     git add test.txt  
