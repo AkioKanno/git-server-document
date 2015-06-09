@@ -1,4 +1,9 @@
 **Gitサーバ構築メモ**  
+恥ずかしながら、今までgit hub, git laboにて開発は行ってきた経験はあるが、  
+サーバにgit のリポジトリ構築経験がありませんでした。  
+  
+そこで今回は適当なサーバに リポジトリを作成し、そこでgit 開発が  
+行えるまでのメモを書いていきます。  
   
 #  1.git のインストール  
      yum install git  
@@ -30,6 +35,7 @@
 
 #  6. pushしてみる  
 ここまでくればあと一歩！ ゴールは目前です。  
+
     echo "test !" > test.txt  
     git add test.txt  
     git commit -m "first commit"  
